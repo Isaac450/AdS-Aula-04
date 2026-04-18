@@ -23,12 +23,10 @@ const billingRepository     = new SqlBillingRepository();
 const auditRepository       = new SqlAuditRepository();
 
 // 2. Injetar no AppointmentService (Producer)
-const appointmentService = new AppointmentService(appointmentRepository,
-eventBus);
+const appointmentService = new AppointmentService(appointmentRepository,eventBus);
 
 // 3. Injetar nos Consumers
-const notificationConsumer = new NotificationConsumer(notificationService,
-patientRepository);
+const notificationConsumer = new NotificationConsumer(notificationService,patientRepository);
 const billingConsumer      = new BillingConsumer(billingRepository);
 const auditConsumer        = new AuditConsumer(auditRepository);
 
