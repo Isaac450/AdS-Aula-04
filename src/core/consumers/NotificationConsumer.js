@@ -1,11 +1,10 @@
 // src/core/consumers/NotificationConsumer.js
-// Responsabilidade única: reagir a ConsultaAgendada enviando SMS ao
-paciente
+// Responsabilidade única: reagir a ConsultaAgendada enviando SMS ao paciente
 
 class NotificationConsumer {
   constructor(notificationService, patientRepository) {
     this.notificationService = notificationService; // INotificationService
-    this.patientRepository   = patientRepository;   // IPatientRepository
+    this.patientRepository = patientRepository; // IPatientRepository
   }
 
   // Handler passado ao IEventBus.subscribe()
@@ -21,5 +20,3 @@ class NotificationConsumer {
 }
 
 module.exports = NotificationConsumer;
-
-// ---

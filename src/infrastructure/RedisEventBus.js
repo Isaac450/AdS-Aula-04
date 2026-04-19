@@ -9,6 +9,10 @@ class RedisEventBus extends IEventBus {
     this.publisher  = new Redis(redisConfig);
     this.subscriber = new Redis(redisConfig);
     this.handlers   = {}; // eventType → [handlers]
+
+    //MADE BY AI!
+    this.publisher.on('error', () => {});
+    this.subscriber.on('error', () => {});
   }
 
   async publish(eventType, payload) {
