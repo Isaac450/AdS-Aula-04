@@ -1,7 +1,7 @@
 // src/composition.js
 
 // Adaptadores de infraestrutura
-const RedisEventBus              = require('./infrastructure/RedisEventBus');
+const InMemoryEventBus           = require('./infrastructure/InMemoryEventBus');
 const SqlAppointmentRepository   = require('./infrastructure/SqlAppointmentRepository');
 const SqlPatientRepository       = require('./infrastructure/SqlPatientRepository');
 const TwilioNotificationService  = require('./infrastructure/TwilioNotificationService');
@@ -15,7 +15,7 @@ const BillingConsumer      = require('./core/consumers/BillingConsumer');
 const AuditConsumer        = require('./core/consumers/AuditConsumer');
 
 // 1. Instanciar adaptadores
-const eventBus              = new RedisEventBus();
+const eventBus              = new InMemoryEventBus();
 const appointmentRepository = new SqlAppointmentRepository();
 const patientRepository     = new SqlPatientRepository();
 const notificationService   = new TwilioNotificationService();
