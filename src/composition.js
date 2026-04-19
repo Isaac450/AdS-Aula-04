@@ -4,7 +4,7 @@
 const InMemoryEventBus           = require('./infrastructure/InMemoryEventBus');
 const SqlAppointmentRepository   = require('./infrastructure/SqlAppointmentRepository');
 const SqlPatientRepository       = require('./infrastructure/SqlPatientRepository');
-const TwilioNotificationService  = require('./infrastructure/TwilioNotificationService');
+const ConsoleNotificationAdapter = require('./infrastructure/ConsoleNotificationAdapter');
 const SqlBillingRepository       = require('./infrastructure/SqlBillingRepository');
 const SqlAuditRepository         = require('./infrastructure/SqlAuditRepository');
 
@@ -18,7 +18,7 @@ const AuditConsumer        = require('./core/consumers/AuditConsumer');
 const eventBus              = new InMemoryEventBus();
 const appointmentRepository = new SqlAppointmentRepository();
 const patientRepository     = new SqlPatientRepository();
-const notificationService   = new TwilioNotificationService();
+const notificationService   = new ConsoleNotificationAdapter();
 const billingRepository     = new SqlBillingRepository();
 const auditRepository       = new SqlAuditRepository();
 
